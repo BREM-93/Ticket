@@ -41,19 +41,18 @@ public class Ventas {
             productos.add(producto);
         }
 
-        // Crear una orden con el cliente y los productos ingresados
+        // Orden del cliente y los productos ingresados
         Orden orden = new Orden(cliente);
         for (Producto producto : productos) {
             orden.agregarProducto(producto);
         }
 
-        // Establecer la fecha de la orden (opcional, se usa la fecha actual por defecto)
-        // orden.setFechaOrden(LocalDate.of(2024, Month.JULY, 18));
+        // Establecer la fecha de la orden
 
         // Calcular el total de la orden
         double totalOrden = orden.calcularTotal();
 
-        // Mostrar información en la consola
+        // Información en consola
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         System.out.println("\nResumen de la Orden:");
         System.out.println("Cliente: " + cliente.getNombre());
